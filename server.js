@@ -21,3 +21,16 @@ const db = mysql.createConnection(
     console.log(`Connected tothe employeelist_db database.`)
 );
 
+// query database
+db.query('SELECT * FROM students', function (err, results) {
+    console.log(results);
+});
+
+// 
+app.use((req, res) => {
+    res.status(404).end();
+});
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
