@@ -1,4 +1,3 @@
-
 const mysql = reqire('mysql2');
 
 // Connect to database
