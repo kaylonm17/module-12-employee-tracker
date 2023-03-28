@@ -1,5 +1,8 @@
+
+const { prompt } = require('inquirer');
+
 const express = reqire('express')
-const mysql = reqire('mysql2')
+
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -14,7 +17,6 @@ const db = mysql.createConnection(
         host: 'localhost',
         // 
         user: 'root',
-
         password: 'Texans17',
         database: 'employeelist_db'
     },
