@@ -23,5 +23,22 @@ class DB {
     async findAllRoles() {
         return  db_connection.promise().query('SELECT * FROM role');
     }
-    // not working
-}
+    // // not working
+    // async createRole(role) {
+    //     return db_connection.promise().query('INSERT INTO role SET ?', role);
+    // }
+    // employee
+    async findAllEmployees() {
+        let data = await db_connection.promise().query('SELECT * FROM employee');
+        return data;
+    }
+    // // not working
+    // async createEmployee(employee) {
+    //     let data = await db_connection
+    //         .promise()
+    //         .query('INSERT INTO employee SET ?', employee);
+    //     return data;
+    // }
+} 
+// end class
+module.exports = new DB(db_connections); 
