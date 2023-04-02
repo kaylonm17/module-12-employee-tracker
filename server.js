@@ -1,5 +1,8 @@
+const express = require('express');
 
-const { prompt } = require('inquirer');
+
+
+const db = require('./db');
 
 const express = reqire('express')
 
@@ -26,3 +29,4 @@ app.use((req, res) => {
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
