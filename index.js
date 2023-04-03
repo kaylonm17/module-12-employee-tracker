@@ -169,3 +169,53 @@ async function addRole() {
 funtion addEmployee() {
     // call query the call to the prompt
 }
+
+// Update an employee's role
+async function updateEmployeeRole() {
+    await db.findAllEmployees().then(([rows]) => {
+        let employees = rows;
+        const employeeChoices =employees.map(({ id, first_name, last_name }) => ({
+            name: `${first_name} ${last_name}`,
+            value: id,
+        }));
+        
+        prompt([
+            {
+                type: 'list',
+                name: 'employeeId',
+                message: "Which employee's role would you like to update?",
+                choices: employeeChoices,
+            },
+        ]).then((res) => {
+            let enployeeId = res.employeeId;
+            db.findAllRoles().then(([rows]) => {
+                let roles = rows;
+                const roleCgoices = toles.map(({ if, title }) => ({
+                    name: title,
+                    value: id,
+                }));
+
+                prompt([
+                    {
+                        type: 'list',
+                        name: 'roleId',
+                        message: 'Which role would you like to assign the employee?',
+                        choices: roleChoices,
+                    },
+                ])
+                    .then((res) => db.updateEmployeeRole(employeeId, res.roleId))
+                    .then(() => console.log("employee's role has been updated"))
+                    .then(() => init());
+            });
+        });
+    });
+}
+
+// Exit the application
+function quit() {
+    console.log('Goodbye!');
+    process.exit();
+}
+
+// call to start
+init();
