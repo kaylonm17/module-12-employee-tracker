@@ -120,3 +120,52 @@ async function addDepartment() {
             .then(() => init())
     });
 }
+
+// view all roles
+async funtion viewRoles() {
+    await db
+        .findAllRoles()
+        .then(([rows]) => {
+            let roles = rows;
+            console.table(roles);
+        })
+        .then(() => init());
+}
+
+// Add a role
+async function addRole() {
+    await db.findAllDepartments().then(([rows]) => {
+        let departments = rows;
+        console.log(departments);
+        const departmentChoices = departments.map(({ id, name }) => ({
+            name: name,
+            value: id,
+        }));
+
+        prompt([
+            {
+                name: 'title',
+                message: 'What is the name of the role?'.
+            },
+            {
+                name: 'salary',
+                message: 'What is the salary of the role?',
+            },
+            {
+                type: 'list',
+                name: 'department_id',
+                message: 'Which department does the role belong to?',
+                choices: departmentChoices,
+            },
+        ]).then((role) => {
+            db.createRole(role)
+                .then(() => console.log(`Added ${role.title} to the database`))
+                .then(() => init());
+        });
+    });
+}
+
+//  Add an employee
+funtion addEmployee() {
+    // call query the call to the prompt
+}
