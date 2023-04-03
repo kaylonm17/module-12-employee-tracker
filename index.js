@@ -52,5 +52,35 @@ async function init() {
                 },
             ],
         },
-    ])
+    ]).then((res) => {
+        let choice = res.choice;
+        // case is the users value of the above choices
+        // Call the corrisponding function depending on what the user chooses
+        // break is used for switch statements to break out from checking all the cases
+        switch (choice) {
+            case 'VIEW_EMPLOYEES':
+                viewEmployee();
+                break;
+            case 'ADD_DEPARTMENT':
+                addDeparment();
+                break;
+            case 'VIEW_DEPARTMENTS':
+                viewDepartments();
+                break;
+            case 'VIEW_ROLES':
+                viewRoles();
+                break;
+            case 'ADD_ROLE':
+                addRole();
+                break;
+            case 'ADD_EMPLOYEE':
+                addEmployee():
+                break;
+            case 'UPDATE_EMPLOYEE_ROLE',
+                updateEmployeeRole():
+                break;
+            default:
+                quit();
+        }
+    });
 }
