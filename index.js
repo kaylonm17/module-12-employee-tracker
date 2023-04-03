@@ -1,6 +1,6 @@
 // inquirer for the ability to ask questions to be answered by the user.
 const { prompt } = require('inquirer');
-// we require the folder to import akk exports in the folder (connection and sql statements)
+// we require the folder to import all exports in the folder (connection and sql statements)
 // db holds the connection and the queries
 const db = require('./db');
 // use this library because console.log is ugly
@@ -73,7 +73,7 @@ async function init() {
             case 'ADD_ROLE':
                 addRole();
                 break;
-            case 'ADD_EMPLOYEE':
+            case 'ADD_EMPLOYEE',
                 addEmployee():
                 break;
             case 'UPDATE_EMPLOYEE_ROLE',
@@ -122,7 +122,7 @@ async function addDepartment() {
 }
 
 // view all roles
-async funtion viewRoles() {
+async function viewRoles() {
     await db
         .findAllRoles()
         .then(([rows]) => {
