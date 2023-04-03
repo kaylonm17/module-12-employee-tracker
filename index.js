@@ -68,7 +68,7 @@ async function init() {
                 viewDepartments();
                 break;
             case 'VIEW_ROLES':
-                viewRoles();
+                addRoles();
                 break;
             case 'ADD_ROLE':
                 addRole();
@@ -84,3 +84,8 @@ async function init() {
         }
     });
 }
+// view all departments
+// async is used to use the benefit of promises (chaining method)
+// findAllDeparments()code is in the db/index.js
+// findAllDeparments() returns an array of db data rows
+// console.table() takes the rows and formants the output with column titles and data
