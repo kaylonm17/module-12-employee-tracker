@@ -145,7 +145,7 @@ async function addRole() {
         prompt([
             {
                 name: 'title',
-                message: 'What is the name of the role?'.
+                message: 'What is the name of the role?',
             },
             {
                 name: 'salary',
@@ -166,7 +166,7 @@ async function addRole() {
 }
 
 //  Add an employee
-funtion addEmployee() {
+function addEmployee() {
     // call query the call to the prompt
 }
 
@@ -190,7 +190,7 @@ async function updateEmployeeRole() {
             let enployeeId = res.employeeId;
             db.findAllRoles().then(([rows]) => {
                 let roles = rows;
-                const roleCgoices = toles.map(({ if, title }) => ({
+                const roleCgoices = toles.map(({ id, title }) => ({
                     name: title,
                     value: id,
                 }));
