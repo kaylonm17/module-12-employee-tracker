@@ -187,7 +187,7 @@ async function updateEmployeeRole() {
                 choices: employeeChoices,
             },
         ]).then((res) => {
-            let enployeeId = res.employeeId;
+            let employeeId = res.employeeId;
             db.findAllRoles().then(([rows]) => {
                 let roles = rows;
                 const roleCgoices = toles.map(({ id, title }) => ({
