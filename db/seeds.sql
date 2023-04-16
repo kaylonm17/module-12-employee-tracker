@@ -30,4 +30,4 @@ VALUES
         ('Austin', 'Chism', 5, 6),
         ('Nathan', 'Leal', 6, NULL),
         ('Sarah', 'Gomez', 7, NULL),
-        ('Patrick', 'Bill', 8, NULL),
+        ('Patrick', 'Bill', 8, NULL);

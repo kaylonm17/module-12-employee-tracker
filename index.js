@@ -39,7 +39,7 @@ async function init() {
                     value: 'VIEW_EMPLOYEES',
                 },
                 {
-                    name: 'Add emplyee',
+                    name: 'Add employee',
                     value: 'ADD_EMPLOYEE',
                 },
                 {
@@ -62,7 +62,7 @@ async function init() {
                 viewEmployee();
                 break;
             case 'ADD_DEPARTMENT':
-                addDeparment();
+                addDepartment();
                 break;
             case 'VIEW_DEPARTMENTS':
                 viewDepartments();
